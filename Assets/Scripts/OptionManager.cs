@@ -22,7 +22,7 @@ public class OptionManager : MonoBehaviour
   public AudioClip ButtonSound;
   private string sceneNameForRetry;
 
-  public GameObject GoogleInterStitialAds;
+  // public GameObject GoogleInterStitialAds;
 
   // Start is called before the first frame update
   void Start()
@@ -81,19 +81,19 @@ public class OptionManager : MonoBehaviour
     // ならしてすぐ消す
     Time.timeScale = 1f;
     playButtonSound();
-    Time.timeScale = 0f;
+    // Time.timeScale = 0f;
 
-    AdsCount.adsCount += 1;
-    // 2回に1回広告表示
-    if (AdsCount.adsCount % 2 == 0)
-    {
-      GoogleInterStitialAds.SetActive(true);
-      GoogleInterStitialAds.GetComponent<GoogleInterStitialAds>().ShowAds();
-    }
-    else
-    {
-      Time.timeScale = 1f;
-    }
+    // AdsCount.adsCount += 1;
+    // // 2回に1回広告表示
+    // if (AdsCount.adsCount % 2 == 0)
+    // {
+    //   // GoogleInterStitialAds.SetActive(true);
+    //   // GoogleInterStitialAds.GetComponent<GoogleInterStitialAds>().ShowAds();
+    // }
+    // else
+    // {
+    //   Time.timeScale = 1f;
+    // }
     FadeManager.Instance.LoadScene("Menu", 0.3f);
   }
   public void Retry()
@@ -101,19 +101,19 @@ public class OptionManager : MonoBehaviour
     // ならしてすぐ消す
     Time.timeScale = 1f;
     playButtonSound();
-    Time.timeScale = 0f;
+    // Time.timeScale = 0f;
 
-    AdsCount.adsCount += 1;
-    // 2回に1回広告表示
-    if (AdsCount.adsCount % 2 == 0)
-    {
-      GoogleInterStitialAds.SetActive(true);
-      GoogleInterStitialAds.GetComponent<GoogleInterStitialAds>().ShowAds();
-    }
-    else
-    {
-      Time.timeScale = 1f;
-    }
+    // AdsCount.adsCount += 1;
+    // // 2回に1回広告表示
+    // if (AdsCount.adsCount % 2 == 0)
+    // {
+    //   // GoogleInterStitialAds.SetActive(true);
+    //   // GoogleInterStitialAds.GetComponent<GoogleInterStitialAds>().ShowAds();
+    // }
+    // else
+    // {
+    //   Time.timeScale = 1f;
+    // }
     sceneNameForRetry = SceneManager.GetActiveScene().name;
     FadeManager.Instance.LoadScene(sceneNameForRetry, 0.3f);
   }
