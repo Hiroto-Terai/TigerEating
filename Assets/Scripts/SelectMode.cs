@@ -5,9 +5,7 @@ using UnityEngine.SceneManagement;
 public class SelectMode : MonoBehaviour
 {
   public string nextScene;
-
   public AudioClip ButtonSound;
-
   public void goToNextScene()
   {
     if (OptionManager.isSePlaying == true)

@@ -1,36 +1,162 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class LoadScene : MonoBehaviour
+public class OptionManager : MonoBehaviour
 {
-  GameObject mainCamera;
-  GameObject Button;
-  Camera main;
-  public AudioClip StartSound;
+  // オプションキャンバスのゲームオブジェクト
+  public GameObject OptionCanvas;
+  private string TwitterURL;
+  private string InstagramURL;
+  private string PrivacyPolicyURL;
+
+  // BGMが再生されているか
+  public static bool isBgmPlaying = true;
+
+  // SEが再生されているか
+  public static bool isSePlaying = true;
+
+  public GameObject Music;
+  public AudioClip ButtonSound;
+  private string sceneNameForRetry;
+
+  public GameObject GoogleInterStitialAds;
 
   // Start is called before the first frame update
   void Start()
   {
-    mainCamera = GameObject.Find("Main Camera");
-    Button = GameObject.Find("Start");
+    TwitterURL = "https://twitter.com/hirot_gamedev";
+    PrivacyPolicyURL = "https://hiroto-terai.github.io/ReindeerEating/";
+    Music = GameObject.Find("Music");
+
+    if (OptionManager.isBgmPlaying == true)
+    {
+      Music.GetComponent<AudioSource>().volume = 0.15f;
+    }
+    else
+    {
+      Music.GetComponent<AudioSource>().volume = 0f;
+    }
+  }
+  public void openOption()
+  {
+    playButtonSound();
+    Time.timeScale = 0f;
+    OptionCanvas.SetActive(true);
+
+    if (isBgmPlaying != true)
+    {
+      GameObject.Find("BGM").transform.GetChild(1).gameObject.SetActive(true);
+    }
+    if (isSePlaying != true)
+    {
+      GameObject.Find("SE").transform.GetChild(1).gameObject.SetActive(true);
+    }
   }
 
-  // Update is called once per frame
-  void Update()
+  public void closeOption()
   {
-    main = mainCamera.GetComponent<Camera>();
-    Vector3 touchPos = main.ScreenToViewportPoint(Input.mousePosition);
-    Collider2D col = Physics2D.OverlapPoint(touchPos);
-    // タップ確認
-    if (Input.GetMouseButtonDown(0))
+    Time.timeScale = 1f;
+    playButtonSound();
+    OptionCanvas.SetActive(false);
+  }
+
+  // Twitterを開く
+  public void openTwitter()
+  {
+    playButtonSound();
+    Application.OpenURL(TwitterURL);
+  }
+
+  public void openPrivacyPolicy()
+  {
+    playButtonSound();
+    Application.OpenURL(PrivacyPolicyURL);
+  }
+
+  public void goToMenuScene()
+  {
+    // ならしてすぐ消す
+    Time.timeScale = 1f;
+    playButtonSound();
+    Time.timeScale = 0f;
+
+    AdsCount.adsCount += 1;
+    // 2回に1回広告表示
+    if (AdsCount.adsCount % 2 == 0)
     {
-      if (col = Button.GetComponent<Collider2D>())
-      {
-        AudioSource.PlayClipAtPoint(StartSound, transform.position);
-        FadeManager.Instance.LoadScene("Menu", 0.3f);
-      }
+      GoogleInterStitialAds.SetActive(true);
+      GoogleInterStitialAds.GetComponent<GoogleInterStitialAds>().ShowAds();
+    }
+    else
+    {
+      Time.timeScale = 1f;
+    }
+    FadeManager.Instance.LoadScene("Menu", 0.3f);
+  }
+  public void Retry()
+  {
+    // ならしてすぐ消す
+    Time.timeScale = 1f;
+    playButtonSound();
+    Time.timeScale = 0f;
+
+    AdsCount.adsCount += 1;
+    // 2回に1回広告表示
+    if (AdsCount.adsCount % 2 == 0)
+    {
+      GoogleInterStitialAds.SetActive(true);
+      GoogleInterStitialAds.GetComponent<GoogleInterStitialAds>().ShowAds();
+    }
+    else
+    {
+      Time.timeScale = 1f;
+    }
+    sceneNameForRetry = SceneManager.GetActiveScene().name;
+    FadeManager.Instance.LoadScene(sceneNameForRetry, 0.3f);
+  }
+
+  public void BgmController()
+  {
+    if (isBgmPlaying == true)
+    {
+      isBgmPlaying = false;
+      playButtonSound();
+      Music.GetComponent<AudioSource>().volume = 0f;
+      this.gameObject.transform.GetChild(1).gameObject.SetActive(true);
+    }
+    else
+    {
+      isBgmPlaying = true;
+      playButtonSound();
+      Music.GetComponent<AudioSource>().volume = 0.15f;
+      this.gameObject.transform.GetChild(1).gameObject.SetActive(false);
+    }
+  }
+
+  public void SeController()
+  {
+    if (isSePlaying == true)
+    {
+      isSePlaying = false;
+      playButtonSound();
+      this.gameObject.transform.GetChild(1).gameObject.SetActive(true);
+    }
+    else
+    {
+      isSePlaying = true;
+      playButtonSound();
+      this.gameObject.transform.GetChild(1).gameObject.SetActive(false);
+    }
+  }
+
+  public void playButtonSound()
+  {
+    if (isSePlaying == true)
+    {
+      AudioSource.PlayClipAtPoint(ButtonSound, GameObject.Find("Main Camera").transform.position);
     }
   }
 }
