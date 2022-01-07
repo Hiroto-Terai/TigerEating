@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: 90ed30efa989f475ca59d78623beb38b
+  - enabled: 1
+    path: Assets/Scenes/ScoreAttackMode.unity
+    guid: 3933fbf17b40541a5aee57647a788fc5
   m_configObjects: {}
