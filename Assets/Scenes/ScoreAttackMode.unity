@@ -282,6 +282,7 @@ MonoBehaviour:
   OptionCanvas: {fileID: 1032194853}
   Music: {fileID: 0}
   ButtonSound: {fileID: 8300000, guid: 58ae9f0285757445494f5d977eb9a387, type: 3}
+  GoogleInterStitialAds: {fileID: 1123898632}
 --- !u!114 &211419437
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -319,6 +320,49 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 211419433}
   m_CullTransparentMesh: 0
+--- !u!1 &382800324
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 382800326}
+  - component: {fileID: 382800325}
+  m_Layer: 0
+  m_Name: GoogleBannerAdsTop
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &382800325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 382800324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a2f9d6e276264153877cc76da969338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &382800326
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 382800324}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &450152521
 GameObject:
   m_ObjectHideFlags: 0
@@ -836,6 +880,7 @@ MonoBehaviour:
   OptionCanvas: {fileID: 854517605}
   Music: {fileID: 0}
   ButtonSound: {fileID: 8300000, guid: 58ae9f0285757445494f5d977eb9a387, type: 3}
+  GoogleInterStitialAds: {fileID: 1123898632}
 --- !u!1 &752884175
 GameObject:
   m_ObjectHideFlags: 0
@@ -1054,6 +1099,7 @@ MonoBehaviour:
   OptionCanvas: {fileID: 1032194853}
   Music: {fileID: 0}
   ButtonSound: {fileID: 8300000, guid: 58ae9f0285757445494f5d977eb9a387, type: 3}
+  GoogleInterStitialAds: {fileID: 1123898632}
 --- !u!114 &776631084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1176,10 +1222,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5335015486124726602, guid: 495bd19f1d1474f599b1228c105be9cb,
+        type: 3}
+      propertyPath: GoogleInterStitialAds
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5335015486446670457, guid: 495bd19f1d1474f599b1228c105be9cb,
+        type: 3}
+      propertyPath: GoogleInterStitialAds
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5335015486446670459, guid: 495bd19f1d1474f599b1228c105be9cb,
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -700
+      objectReference: {fileID: 0}
+    - target: {fileID: 5335015486526163860, guid: 495bd19f1d1474f599b1228c105be9cb,
+        type: 3}
+      propertyPath: GoogleInterStitialAds
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5335015486671335742, guid: 495bd19f1d1474f599b1228c105be9cb,
+        type: 3}
+      propertyPath: GoogleInterStitialAds
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5335015487002260195, guid: 495bd19f1d1474f599b1228c105be9cb,
         type: 3}
@@ -1296,6 +1362,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5335015487588925843, guid: 495bd19f1d1474f599b1228c105be9cb,
+        type: 3}
+      propertyPath: GoogleInterStitialAds
+      value: 
+      objectReference: {fileID: 1123898632}
     - target: {fileID: 5335015487588925845, guid: 495bd19f1d1474f599b1228c105be9cb,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1830,6 +1901,49 @@ RectTransform:
   m_AnchoredPosition: {x: -35, y: -234.46}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1123898632
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1123898634}
+  - component: {fileID: 1123898633}
+  m_Layer: 0
+  m_Name: GoogleInterStitialAds
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1123898633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1123898632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac6bf8d909c1c4e9c9921bddeb8a4120, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1123898634
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1123898632}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1134282329
 GameObject:
   m_ObjectHideFlags: 0
@@ -2562,6 +2676,7 @@ MonoBehaviour:
   OptionCanvas: {fileID: 854517605}
   Music: {fileID: 0}
   ButtonSound: {fileID: 8300000, guid: f968d552484044f52b47e3962e31504c, type: 3}
+  GoogleInterStitialAds: {fileID: 1123898632}
 --- !u!114 &1408973128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2756,6 +2871,7 @@ MonoBehaviour:
   OptionCanvas: {fileID: 854517605}
   Music: {fileID: 0}
   ButtonSound: {fileID: 8300000, guid: f968d552484044f52b47e3962e31504c, type: 3}
+  GoogleInterStitialAds: {fileID: 1123898632}
 --- !u!114 &1454231291
 MonoBehaviour:
   m_ObjectHideFlags: 0
